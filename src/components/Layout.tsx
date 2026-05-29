@@ -8,8 +8,8 @@ import { DEMO_USER } from '../data/mockData';
 
 const NAV_ITEMS = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/onboarding', icon: Map, label: '90-Day Plan' },
   { to: '/courses', icon: BookOpen, label: 'Courses' },
+  { to: '/onboarding', icon: Map, label: '90-Day Plan' },
   { to: '/calendar', icon: Calendar, label: 'Calendar' },
   { to: '/assessments', icon: ClipboardCheck, label: 'Assessments' },
   { to: '/ai-tutor', icon: MessageSquare, label: 'AI Tutor' },
