@@ -86,7 +86,7 @@ export default function Dashboard() {
         {/* Right: image */}
         <div className="w-1/2 relative overflow-hidden">
           <img
-            src="https://danskebank.dk/-/media/danske-bank-images/global/images/generic/advisory956x462.jpg?h=387&iar=0&mw=800&w=800&rev=024d370924744ff599403670ecf5c0da&hash=B7F848A922B2CF7512E53EF85F65E7BC"
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
             alt="Advisory"
             className="absolute inset-0 w-full h-full object-cover"
           />
