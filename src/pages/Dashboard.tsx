@@ -49,38 +49,47 @@ export default function Dashboard() {
   return (
     <Layout>
       {/* Hero Banner */}
-      <div className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format&fit=crop&q=80)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-danske-navy/90 via-danske-navy/75 to-danske-navy/50" />
-        <div className="relative px-6 lg:px-10 py-14 max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
-            Welcome back, {DEMO_USER.name.split(' ')[0]}
-          </h1>
-          <p className="text-white/70 mb-8">
-            Day {daysSinceStart} of your onboarding · {DEMO_USER.department}
-          </p>
-          <form onSubmit={handleSearch} className="flex items-center gap-3 max-w-xl mx-auto">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-                placeholder="Ask AI about AML, GDPR, MiFID II, your progress…"
-                className="w-full pl-11 pr-4 py-3.5 bg-white rounded-xl text-sm text-danske-text placeholder-gray-400 focus:outline-none shadow-lg"
-              />
-            </div>
-            <Link
-              to="/ai-tutor"
-              className="flex items-center gap-2 px-5 py-3.5 bg-danske-navy text-white rounded-xl font-semibold text-sm hover:bg-danske-navyLight transition-colors shadow-lg whitespace-nowrap flex-shrink-0"
-            >
-              <Sparkles className="w-4 h-4" />
-              Ask AI
-            </Link>
-          </form>
+      <div className="flex min-h-[320px] lg:min-h-[380px]">
+        {/* Left: content */}
+        <div className="w-1/2 bg-danske-navy flex items-center px-8 lg:px-14 py-12">
+          <div className="max-w-sm w-full">
+            <p className="text-danske-cyan text-xs font-semibold uppercase tracking-widest mb-3">
+              Day {daysSinceStart} · {DEMO_USER.department}
+            </p>
+            <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+              Welcome back,<br />{DEMO_USER.name.split(' ')[0]}
+            </h1>
+            <p className="text-white/60 text-sm mb-8 leading-relaxed">
+              Continue your onboarding journey. Track certifications, explore courses, and get instant answers from your AI Tutor.
+            </p>
+            <form onSubmit={handleSearch} className="flex items-center gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  placeholder="Ask AI anything…"
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder-white/40 focus:outline-none focus:border-danske-cyan focus:bg-white/15 transition-colors"
+                />
+              </div>
+              <Link
+                to="/ai-tutor"
+                className="flex items-center gap-2 px-4 py-3 bg-danske-cyan text-white rounded-xl font-semibold text-sm hover:bg-danske-cyanDark transition-colors whitespace-nowrap flex-shrink-0"
+              >
+                <Sparkles className="w-4 h-4" />
+                Ask AI
+              </Link>
+            </form>
+          </div>
+        </div>
+        {/* Right: image */}
+        <div className="w-1/2 relative overflow-hidden">
+          <img
+            src="https://danskebank.dk/-/media/danske-bank-images/global/images/generic/advisory956x462.jpg?h=387&iar=0&mw=800&w=800&rev=024d370924744ff599403670ecf5c0da&hash=B7F848A922B2CF7512E53EF85F65E7BC"
+            alt="Advisory"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
       </div>
 
