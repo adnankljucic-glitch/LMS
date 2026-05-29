@@ -21,6 +21,7 @@ export const COURSES: Course[] = [
     deadline: '2026-06-15',
     progress: 65,
     completed: false,
+    thumbnail: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80',
     tags: ['AML', 'Compliance', 'Mandatory'],
   },
   {
@@ -34,6 +35,7 @@ export const COURSES: Course[] = [
     deadline: '2026-06-01',
     progress: 100,
     completed: true,
+    thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
     tags: ['GDPR', 'Data Privacy', 'Mandatory'],
   },
   {
@@ -47,6 +49,7 @@ export const COURSES: Course[] = [
     deadline: '2026-07-01',
     progress: 20,
     completed: false,
+    thumbnail: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80',
     tags: ['MiFID II', 'Regulatory', 'Mandatory'],
   },
   {
@@ -59,6 +62,7 @@ export const COURSES: Course[] = [
     mandatory: false,
     progress: 0,
     completed: false,
+    thumbnail: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=80',
     tags: ['ESG', 'Sustainability', 'Green Finance'],
   },
   {
@@ -71,6 +75,7 @@ export const COURSES: Course[] = [
     mandatory: false,
     progress: 40,
     completed: false,
+    thumbnail: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&auto=format&fit=crop&q=80',
     tags: ['Credit Risk', 'Risk Management'],
   },
   {
@@ -84,6 +89,7 @@ export const COURSES: Course[] = [
     deadline: '2026-05-31',
     progress: 100,
     completed: true,
+    thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80',
     tags: ['Cybersecurity', 'Mandatory'],
   },
   {
@@ -96,6 +102,7 @@ export const COURSES: Course[] = [
     mandatory: false,
     progress: 0,
     completed: false,
+    thumbnail: 'https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?w=800&auto=format&fit=crop&q=80',
     tags: ['Trade Finance', 'Products'],
   },
   {
@@ -109,17 +116,18 @@ export const COURSES: Course[] = [
     deadline: '2026-05-15',
     progress: 100,
     completed: true,
+    thumbnail: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80',
     tags: ['Ethics', 'Mandatory', 'Culture'],
   },
 ];
 
 export const MODULES: Record<string, Module[]> = {
   '1': [
-    { id: 'm1', courseId: '1', title: 'Introduction to Money Laundering', type: 'video', duration: '25m', completed: true, locked: false },
+    { id: 'm1', courseId: '1', title: 'Introduction to Money Laundering', type: 'video', duration: '25m', completed: true, locked: false, videoId: 'tLWNBqyDqh0' },
     { id: 'm2', courseId: '1', title: 'The Three Stages of Money Laundering', type: 'reading', duration: '20m', completed: true, locked: false },
-    { id: 'm3', courseId: '1', title: 'Customer Due Diligence (CDD)', type: 'video', duration: '35m', completed: true, locked: false },
+    { id: 'm3', courseId: '1', title: 'Customer Due Diligence (CDD)', type: 'video', duration: '35m', completed: true, locked: false, videoId: 'Vv9IDR44KzU' },
     { id: 'm4', courseId: '1', title: 'Enhanced Due Diligence (EDD)', type: 'interactive', duration: '30m', completed: false, locked: false },
-    { id: 'm5', courseId: '1', title: 'Suspicious Activity Reporting', type: 'video', duration: '25m', completed: false, locked: false },
+    { id: 'm5', courseId: '1', title: 'Suspicious Activity Reporting', type: 'video', duration: '25m', completed: false, locked: false, videoId: 'Q0TKuMj0X5w' },
     { id: 'm6', courseId: '1', title: 'Sanctions Screening & PEPs', type: 'reading', duration: '20m', completed: false, locked: true },
     { id: 'm7', courseId: '1', title: 'Case Studies: Real-World AML Failures', type: 'interactive', duration: '40m', completed: false, locked: true },
     { id: 'm8', courseId: '1', title: 'AML Knowledge Check', type: 'quiz', duration: '20m', completed: false, locked: true },

@@ -31,6 +31,7 @@ export interface Module {
   duration: string;
   completed: boolean;
   locked: boolean;
+  videoId?: string;
 }
 
 export interface CalendarEvent {

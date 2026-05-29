@@ -59,7 +59,10 @@ export default function OnboardingPlan() {
       <div className="px-6 lg:px-8 py-8 max-w-4xl mx-auto animate-fade-in">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-danske-text">90-Day Onboarding Plan</h1>
+          <nav className="text-xs text-danske-muted mb-2">
+            Dashboard <span className="mx-1.5">→</span> <span className="text-danske-text font-medium">90-Day Onboarding Plan</span>
+          </nav>
+          <h1 className="text-3xl font-bold text-danske-navy">90-Day Onboarding Plan</h1>
           <p className="text-danske-muted mt-1">Your structured journey from Day 1 to Day 90 at Danske Bank</p>
         </div>
 
