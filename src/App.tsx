@@ -1,16 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
-import Dashboard from './components/Dashboard';
+import Dashboard from './pages/Dashboard';
+import OnboardingPlan from './pages/OnboardingPlan';
 import Courses from './pages/Courses';
 import CourseDetail from './pages/CourseDetail';
-import CourseQuiz from './pages/CourseQuiz';
-import Compliance from './pages/Compliance';
-import Reports from './pages/Reports';
-import AITutor from './pages/AITutor';
-import Conferences from './pages/Conferences';
-import AdminDashboard from './pages/AdminDashboard';
-import AdminCourses from './pages/AdminCourses';
-import Admin from './pages/Admin';
+import Calendar from './pages/Calendar';
+import Assessments from './pages/Assessments';
+import AiTutor from './pages/AiTutor';
 
 function App() {
   return (
@@ -19,16 +15,13 @@ function App() {
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/onboarding" element={<OnboardingPlan />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
-        <Route path="/courses/:id/quiz" element={<CourseQuiz />} />
-        <Route path="/compliance" element={<Compliance />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/ai-tutor" element={<AITutor />} />
-        <Route path="/conferences" element={<Conferences />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/courses" element={<AdminCourses />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/assessments" element={<Assessments />} />
+        <Route path="/ai-tutor" element={<AiTutor />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>
   );

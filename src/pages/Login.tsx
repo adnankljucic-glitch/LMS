@@ -1,137 +1,165 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Activity, Shield, Users, BookOpen, Award } from 'lucide-react';
+import { Shield, BookOpen, TrendingUp, Award, Eye, EyeOff } from 'lucide-react';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('demo@demo.com');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+    if (!email || !password) {
+      setError('Please enter your email and password.');
+      return;
+    }
     setIsLoading(true);
-    
-    // Simulate authentication
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate('/dashboard');
-    }, 1000);
+    await new Promise(r => setTimeout(r, 900));
+    setIsLoading(false);
+    navigate('/dashboard');
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-8">
-      <div className="w-full max-w-5xl flex gap-8">
-        {/* Left Side - Branding */}
-        <div className="flex-1 flex flex-col justify-center">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <Activity className="w-7 h-7 text-white" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-white font-abhaya">HILIO</h1>
-              <p className="text-slate-400 text-sm -mt-1">Healthcare Learning Platform</p>
-            </div>
-          </div>
-          
-          <h2 className="text-5xl font-bold text-white mb-6 leading-tight font-abhaya">
-            Transform<br />Healthcare<br />Training
-          </h2>
-          
-          <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-            Empower your healthcare workforce with AI-driven learning, compliance
-            tracking, and immersive VR training experiences.
-          </p>
+  const features = [
+    { icon: Shield, label: 'Mandatory Compliance Certifications', sub: 'AML, GDPR, MiFID II and more' },
+    { icon: BookOpen, label: 'Structured 90-Day Onboarding', sub: 'Week-by-week learning journey' },
+    { icon: TrendingUp, label: 'Progress Tracking', sub: 'Real-time dashboards and milestones' },
+    { icon: Award, label: 'AI Tutor', sub: 'Instant answers on banking regulations' },
+  ];
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 text-slate-300">
-              <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                <Shield className="w-5 h-5 text-blue-400" />
-              </div>
-              <span>Compliance Tracking & CME Credits</span>
-            </div>
-            <div className="flex items-center gap-3 text-slate-300">
-              <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                <Users className="w-5 h-5 text-purple-400" />
-              </div>
-              <span>AI-Powered Personalized Learning Paths</span>
-            </div>
-            <div className="flex items-center gap-3 text-slate-300">
-              <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-green-400" />
-              </div>
-              <span>VR Training Integration</span>
-            </div>
-            <div className="flex items-center gap-3 text-slate-300">
-              <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
-                <Award className="w-5 h-5 text-orange-400" />
-              </div>
-              <span>Certification Management</span>
-            </div>
+  return (
+    <div className="min-h-screen flex">
+      {/* Left panel */}
+      <div className="hidden lg:flex flex-col w-[480px] bg-danske-navy text-white p-12 flex-shrink-0">
+        <div className="flex items-center gap-3 mb-16">
+          <div className="w-10 h-10 bg-danske-cyan rounded flex items-center justify-center font-bold text-danske-navy">
+            DB
+          </div>
+          <div>
+            <div className="font-bold text-lg leading-tight">Danske Bank</div>
+            <div className="text-white/50 text-xs">Learning Centre</div>
           </div>
         </div>
 
-        {/* Right Side - Login Form */}
-        <div className="w-96">
-          <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-2 font-abhaya">Welcome back</h3>
-            <p className="text-slate-400 mb-8">Sign in to continue your learning journey</p>
+        <h1 className="text-4xl font-bold leading-tight mb-4">
+          Empower your<br />
+          <span className="text-danske-cyan">financial career.</span>
+        </h1>
+        <p className="text-white/60 text-lg mb-12 leading-relaxed">
+          Structured learning, mandatory certifications, and expert AI support — everything you need to excel at Danske Bank.
+        </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-6">
+          {features.map(({ icon: Icon, label, sub }) => (
+            <div key={label} className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                <Icon className="w-5 h-5 text-danske-cyan" />
+              </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="you@hospital.com"
-                />
+                <div className="font-medium text-sm">{label}</div>
+                <div className="text-white/50 text-xs mt-0.5">{sub}</div>
               </div>
+            </div>
+          ))}
+        </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="••••••••"
-                />
-              </div>
+        <div className="mt-auto pt-12 border-t border-white/10">
+          <p className="text-white/30 text-xs leading-relaxed">
+            Danske Bank A/S · Holmens Kanal 2-12, 1092 Copenhagen K · CVR-nr. 61126228
+          </p>
+        </div>
+      </div>
 
-              <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center gap-2 text-slate-300">
-                  <input type="checkbox" className="w-4 h-4 rounded border-slate-600 bg-slate-900/50" />
-                  Remember me
-                </label>
-                <a href="#" className="text-blue-400 hover:text-blue-300">
-                  Forgot password?
-                </a>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200 disabled:opacity-50"
-              >
-                {isLoading ? 'Signing in...' : 'Sign In'}
-              </button>
-            </form>
-
-            <div className="mt-6 pt-6 border-t border-slate-700">
-              <p className="text-center text-slate-400 text-sm">
-                Don't have an account?{' '}
-                <a href="#" className="text-blue-400 hover:text-blue-300">
-                  Contact your administrator
-                </a>
-              </p>
+      {/* Right panel */}
+      <div className="flex-1 flex items-center justify-center bg-danske-gray px-6 py-12">
+        <div className="w-full max-w-md">
+          {/* Mobile logo */}
+          <div className="flex items-center gap-3 mb-10 lg:hidden">
+            <div className="w-10 h-10 bg-danske-navy rounded flex items-center justify-center font-bold text-white">DB</div>
+            <div>
+              <div className="font-bold text-lg text-danske-navy">Danske Bank</div>
+              <div className="text-danske-muted text-xs">Learning Centre</div>
             </div>
           </div>
+
+          <h2 className="text-2xl font-bold text-danske-text mb-1">Welcome back</h2>
+          <p className="text-danske-muted mb-8">Sign in to continue your learning journey</p>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-sm font-medium text-danske-text mb-1.5">Email Address</label>
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className="w-full px-4 py-3 bg-white border border-danske-border rounded-lg text-danske-text placeholder-danske-muted focus:outline-none focus:ring-2 focus:ring-danske-cyan focus:border-transparent text-sm"
+                placeholder="you@danskebank.com"
+                autoComplete="email"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-danske-text mb-1.5">Password</label>
+              <div className="relative">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 pr-11 bg-white border border-danske-border rounded-lg text-danske-text placeholder-danske-muted focus:outline-none focus:ring-2 focus:ring-danske-cyan focus:border-transparent text-sm"
+                  placeholder="••••••••"
+                  autoComplete="current-password"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(v => !v)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-danske-muted hover:text-danske-text"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
+            </div>
+
+            {error && (
+              <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">{error}</p>
+            )}
+
+            <div className="flex items-center justify-between text-sm">
+              <label className="flex items-center gap-2 text-danske-muted cursor-pointer">
+                <input type="checkbox" className="w-4 h-4 rounded border-danske-border accent-danske-cyan" />
+                Remember me
+              </label>
+              <a href="#" className="text-danske-cyan hover:text-danske-cyanDark font-medium">Forgot password?</a>
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full py-3 bg-danske-navy text-white rounded-lg font-semibold hover:bg-danske-navyLight transition-colors disabled:opacity-60 text-sm"
+            >
+              {isLoading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                  </svg>
+                  Signing in…
+                </span>
+              ) : 'Sign In'}
+            </button>
+          </form>
+
+          <div className="mt-6 p-4 bg-danske-cyan/10 border border-danske-cyan/20 rounded-lg">
+            <p className="text-xs text-danske-navy font-medium mb-1">Demo credentials</p>
+            <p className="text-xs text-danske-muted">Email: demo@demo.com · Password: any value</p>
+          </div>
+
+          <p className="mt-8 text-center text-xs text-danske-muted">
+            Need access?{' '}
+            <a href="#" className="text-danske-cyan hover:text-danske-cyanDark font-medium">Contact IT Support</a>
+          </p>
         </div>
       </div>
     </div>
