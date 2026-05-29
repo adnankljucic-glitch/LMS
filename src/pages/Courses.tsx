@@ -92,7 +92,7 @@ export default function Courses() {
                   <span className="text-sm text-white/70">
                     {Math.floor((featuredCourse.progress / 100) * featuredCourse.modules)} of {featuredCourse.modules} modules
                   </span>
-                  <span className="flex items-center gap-2 bg-danske-cyan text-danske-navy px-5 py-2.5 rounded-xl text-sm font-bold group-hover:bg-white transition-colors">
+                  <span className="flex items-center gap-2 bg-danske-navy text-white px-5 py-2.5 rounded-xl text-sm font-bold group-hover:bg-danske-navyLight transition-colors">
                     Resume Course <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export default function Courses() {
             <div className="bg-white rounded-2xl border border-danske-border flex flex-col overflow-hidden">
               <div className="px-5 py-4 border-b border-danske-border flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-danske-cyan/20 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-danske-navy" />
+                  <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <div className="font-semibold text-sm text-danske-text">AI Tutor</div>
@@ -268,7 +268,7 @@ export default function Courses() {
                   course.completed
                     ? 'bg-danske-gray text-danske-muted hover:bg-danske-border'
                     : course.progress > 0
-                    ? 'bg-danske-cyan text-danske-navy hover:bg-danske-cyanLight'
+                    ? 'bg-danske-cyan text-white hover:bg-danske-cyanDark'
                     : 'bg-danske-navy text-white hover:bg-danske-navyLight'
                 }`}>
                   {course.completed ? 'Review' : course.progress > 0 ? 'Continue' : 'Start Course'}

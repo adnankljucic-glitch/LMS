@@ -114,7 +114,7 @@ export default function OnboardingPlan() {
                     weekCompleted === weekTasks.length
                       ? 'bg-green-100 text-green-700'
                       : isCurrent
-                      ? 'bg-danske-cyan text-danske-navy'
+                      ? 'bg-danske-cyan text-white'
                       : isPast
                       ? 'bg-danske-border text-danske-muted'
                       : 'bg-danske-gray text-danske-muted'
@@ -125,7 +125,7 @@ export default function OnboardingPlan() {
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-sm text-danske-text">{weekLabel(week)}</span>
                       {isCurrent && (
-                        <span className="text-xs bg-danske-cyan/20 text-danske-navy px-2 py-0.5 rounded-full font-medium">Current</span>
+                        <span className="text-xs bg-danske-cyan text-white px-2 py-0.5 rounded-full font-medium">Current</span>
                       )}
                     </div>
                     <span className="text-xs text-danske-muted">{weekCompleted}/{weekTasks.length} tasks</span>

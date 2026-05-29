@@ -75,7 +75,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-danske-cyan text-danske-navy'
+                    ? 'bg-danske-cyan text-white'
                     : 'text-white/70 hover:text-white hover:bg-white/10'
                 }`
               }

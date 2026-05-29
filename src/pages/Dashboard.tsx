@@ -75,7 +75,7 @@ export default function Dashboard() {
             </div>
             <Link
               to="/ai-tutor"
-              className="flex items-center gap-2 px-5 py-3.5 bg-danske-cyan text-danske-navy rounded-xl font-semibold text-sm hover:bg-danske-cyanLight transition-colors shadow-lg whitespace-nowrap flex-shrink-0"
+              className="flex items-center gap-2 px-5 py-3.5 bg-danske-navy text-white rounded-xl font-semibold text-sm hover:bg-danske-navyLight transition-colors shadow-lg whitespace-nowrap flex-shrink-0"
             >
               <Sparkles className="w-4 h-4" />
               Ask AI
@@ -265,7 +265,7 @@ export default function Dashboard() {
             <div className="bg-danske-navy rounded-xl p-6 text-white">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-danske-cyan flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="w-5 h-5 text-danske-navy" />
+                  <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <div className="font-semibold text-sm">AI Tutor</div>
@@ -275,7 +275,7 @@ export default function Dashboard() {
               <p className="text-white/60 text-xs mb-4 leading-relaxed">Ask about AML regulations, compliance obligations, or get help understanding any course topic.</p>
               <Link
                 to="/ai-tutor"
-                className="flex items-center justify-center gap-2 w-full py-2.5 bg-danske-cyan text-danske-navy rounded-lg text-sm font-semibold hover:bg-danske-cyanLight transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-2.5 bg-danske-cyan text-white rounded-lg text-sm font-semibold hover:bg-danske-cyanDark transition-colors"
               >
                 Open AI Tutor <ArrowRight className="w-4 h-4" />
               </Link>
