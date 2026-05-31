@@ -49,47 +49,42 @@ export default function Dashboard() {
   return (
     <Layout>
       {/* Hero Banner */}
-      <div className="flex min-h-[320px] lg:min-h-[380px]">
-        {/* Left: content */}
-        <div className="w-1/2 bg-danske-navy flex items-center px-8 lg:px-14 py-12">
-          <div className="max-w-sm w-full">
-            <p className="text-danske-cyan text-xs font-semibold uppercase tracking-widest mb-3">
-              Day {daysSinceStart} · {DEMO_USER.department}
-            </p>
-            <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-              Welcome back,<br />{DEMO_USER.name.split(' ')[0]}
-            </h1>
-            <p className="text-white/60 text-sm mb-8 leading-relaxed">
-              Continue your onboarding journey. Track certifications, explore courses, and get instant answers from your AI Tutor.
-            </p>
-            <form onSubmit={handleSearch} className="flex items-center gap-2">
-              <div className="relative flex-1">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={e => setSearchQuery(e.target.value)}
-                  placeholder="Ask AI anything…"
-                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder-white/40 focus:outline-none focus:border-danske-cyan focus:bg-white/15 transition-colors"
-                />
-              </div>
-              <Link
-                to="/ai-tutor"
-                className="flex items-center gap-2 px-4 py-3 bg-danske-cyan text-white rounded-xl font-semibold text-sm hover:bg-danske-cyanDark transition-colors whitespace-nowrap flex-shrink-0"
-              >
-                <Sparkles className="w-4 h-4" />
-                Ask AI
-              </Link>
-            </form>
-          </div>
-        </div>
-        {/* Right: image */}
-        <div className="w-1/2 relative overflow-hidden">
-          <img
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Advisory"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+      <div className="relative min-h-[320px] lg:min-h-[380px] flex items-center justify-center overflow-hidden">
+        <img
+          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1400"
+          alt="Advisory"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-danske-navy/80" />
+        <div className="relative z-10 text-center px-8 py-12 max-w-xl w-full">
+          <p className="text-danske-cyan text-xs font-semibold uppercase tracking-widest mb-3">
+            Day {daysSinceStart} · {DEMO_USER.department}
+          </p>
+          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+            Welcome back,<br />{DEMO_USER.name.split(' ')[0]}
+          </h1>
+          <p className="text-white/60 text-sm mb-8 leading-relaxed">
+            Continue your onboarding journey. Track certifications, explore courses, and get instant answers from your AI Tutor.
+          </p>
+          <form onSubmit={handleSearch} className="flex items-center gap-2">
+            <div className="relative flex-1">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                placeholder="Ask AI anything…"
+                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder-white/40 focus:outline-none focus:border-danske-cyan focus:bg-white/15 transition-colors"
+              />
+            </div>
+            <Link
+              to="/ai-tutor"
+              className="flex items-center gap-2 px-4 py-3 bg-danske-cyan text-white rounded-xl font-semibold text-sm hover:bg-danske-cyanDark transition-colors whitespace-nowrap flex-shrink-0"
+            >
+              <Sparkles className="w-4 h-4" />
+              Ask AI
+            </Link>
+          </form>
         </div>
       </div>
 
