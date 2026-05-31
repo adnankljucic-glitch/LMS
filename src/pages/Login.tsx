@@ -86,7 +86,7 @@ export default function Login() {
           </div>
 
           <h2 className="text-2xl font-bold text-danske-text mb-1">Welcome back</h2>
-          <p className="text-danske-muted mb-8">Sign in to continue your learning journey</p>
+          <p className="text-danske-muted mb-8">Auto-certify employees & stay audit-ready across GDPR, Cybersecurity, and industry rules. Stay compliant, reduce risk, and track progress with our Learning Lifecycle Platform. Automate Learning Flows. Scale Learning Faster.</p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
